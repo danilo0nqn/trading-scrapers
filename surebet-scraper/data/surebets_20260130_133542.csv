@@ -1,0 +1,4 @@
+match,league,market,margin_percent,roi_percent,total_stake,guaranteed_profit,detected_at,outcome,bookmaker,odds,stake,expected_return
+Boca Juniors vs River Plate,Primera Division,1X2,1.92,1.96,50000.0,978.37,2026-01-30T13:35:42.195437,1,BetWarrior,2.5,20391.35,50978.37
+Boca Juniors vs River Plate,Primera Division,1X2,1.92,1.96,50000.0,978.37,2026-01-30T13:35:42.195437,X,Codere,3.6,14160.66,50978.37
+Boca Juniors vs River Plate,Primera Division,1X2,1.92,1.96,50000.0,978.37,2026-01-30T13:35:42.195437,2,Bplay,3.3,15447.99,50978.37

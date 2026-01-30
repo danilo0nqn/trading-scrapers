@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-01-30T13:34:15.049749",
+  "count": 1,
+  "surebets": [
+    {
+      "match": {
+        "home_team": "Boca Juniors",
+        "away_team": "River Plate",
+        "league": "Primera Division",
+        "country": "Argentina",
+        "match_time": "2024-01-20 20:00",
+        "odds": {
+          "1X2": [
+            {
+              "bookmaker": "BetWarrior",
+              "outcome": "1",
+              "value": 2.5,
+              "timestamp": "2026-01-30T13:34:15.049005"
+            },
+            {
+              "bookmaker": "BetWarrior",
+              "outcome": "X",
+              "value": 3.1,
+              "timestamp": "2026-01-30T13:34:15.049048"
+            },
+            {
+              "bookmaker": "BetWarrior",
+              "outcome": "2",
+              "value": 3.0,
+              "timestamp": "2026-01-30T13:34:15.049054"
+            },
+            {
+              "bookmaker": "Codere",
+              "outcome": "1",
+              "value": 2.35,
+              "timestamp": "2026-01-30T13:34:15.049070"
+            },
+            {
+              "bookmaker": "Codere",
+              "outcome": "X",
+              "value": 3.6,
+              "timestamp": "2026-01-30T13:34:15.049075"
+            },
+            {
+              "bookmaker": "Codere",
+              "outcome": "2",
+              "value": 3.15,
+              "timestamp": "2026-01-30T13:34:15.049079"
+            },
+            {
+              "bookmaker": "Bplay",
+              "outcome": "1",
+              "value": 2.4,
+              "timestamp": "2026-01-30T13:34:15.049083"
+            },
+            {
+              "bookmaker": "Bplay",
+              "outcome": "X",
+              "value": 3.2,
+              "timestamp": "2026-01-30T13:34:15.049087"
+            },
+            {
+              "bookmaker": "Bplay",
+              "outcome": "2",
+              "value": 3.3,
+              "timestamp": "2026-01-30T13:34:15.049091"
+            },
+            {
+              "bookmaker": "Betsson",
+              "outcome": "1",
+              "value": 2.38,
+              "timestamp": "2026-01-30T13:34:15.049095"
+            },
+            {
+              "bookmaker": "Betsson",
+              "outcome": "X",
+              "value": 3.25,
+              "timestamp": "2026-01-30T13:34:15.049099"
+            },
+            {
+              "bookmaker": "Betsson",
+              "outcome": "2",
+              "value": 3.2,
+              "timestamp": "2026-01-30T13:34:15.049103"
+            }
+          ]
+        }
+      },
+      "market": "1X2",
+      "margin": 1.9191919191919204,
+      "roi": 1.9567000000000008,
+      "stakes": [
+        {
+          "outcome": "1",
+          "bookmaker": "BetWarrior",
+          "odds": 2.5,
+          "stake": 4078.27,
+          "expected_return": 10195.67
+        },
+        {
+          "outcome": "X",
+          "bookmaker": "Codere",
+          "odds": 3.6,
+          "stake": 2832.13,
+          "expected_return": 10195.67
+        },
+        {
+          "outcome": "2",
+          "bookmaker": "Bplay",
+          "odds": 3.3,
+          "stake": 3089.6,
+          "expected_return": 10195.67
+        }
+      ],
+      "total_stake": 10000,
+      "guaranteed_profit": 195.67000000000007,
+      "timestamp": "2026-01-30T13:34:15.049220"
+    }
+  ]
+}
