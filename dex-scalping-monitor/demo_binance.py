@@ -61,28 +61,47 @@ class BinanceDexMonitor:
             print("❌ No se pudieron obtener datos")
             return
         
-        # Seleccionar pares TOP por volumen
-        print("\n📈 Analizando pares de alto volumen...")
+        # Seleccionar pares TOP por volumen - ALTCOINS (incluyendo menores)
+        print("\n📈 Analizando altcoins por volumen...")
         top_pairs = []
         for symbol, data in tickers.items():
             if symbol.endswith('USDT') and not symbol.startswith('USD'):
                 try:
                     volume = float(data['quoteVolume'])
-                    if volume > 50_000_000:  # $50M+ volumen
-                        top_pairs.append((symbol, volume, data))
+                    # Incluir altcoins con $500K+ de volumen (mucho más permisivo)
+                    if volume > 500_000:
+                        # Excluir stablecoins
+                        if symbol not in ['USDTUSDT', 'BUSDUSDT', 'USDCUSDT', 'DAIUSDT', 'TUSDUSDT', 'FDUSDUSDT']:
+                            top_pairs.append((symbol, volume, data))
                 except:
                     continue
         
         top_pairs.sort(key=lambda x: x[1], reverse=True)
-        top_pairs = top_pairs[:15]  # Top 15
+        # Tomar top 300 (o todos si hay menos)
+        top_pairs = top_pairs[:300]
         
-        print(f"✅ Analizando {len(top_pairs)} pares principales:\n")
+        print(f"✅ Analizando {len(top_pairs)} altcoins\n")
         
-        # Guardar precios iniciales
-        for symbol, volume, data in top_pairs:
+        # Mostrar solo los primeros 10 y los últimos 5 como muestra
+        print("📊 Muestra de altcoins seleccionados:")
+        for i, (symbol, volume, data) in enumerate(top_pairs[:10]):
             price = float(data['lastPrice'])
             self.price_history[symbol] = price
-            print(f"  📌 {symbol}: ${price:,.4f} (Vol: ${volume/1e6:.1f}M)")
+            print(f"  📌 {symbol}: ${price:,.6f} (Vol: ${volume/1e6:.2f}M)")
+        
+        if len(top_pairs) > 10:
+            print(f"  ... y {len(top_pairs) - 10} altcoins más ...")
+            # Mostrar los últimos 5
+            for symbol, volume, data in top_pairs[-5:]:
+                price = float(data['lastPrice'])
+                self.price_history[symbol] = price
+                print(f"  📌 {symbol}: ${price:,.6f} (Vol: ${volume/1e6:.2f}M)")
+        
+        # Guardar precios iniciales para todos
+        for symbol, volume, data in top_pairs:
+            if symbol not in self.price_history:
+                price = float(data['lastPrice'])
+                self.price_history[symbol] = price
         
         print("\n⏳ Esperando 30 segundos para comparar...")
         time.sleep(30)

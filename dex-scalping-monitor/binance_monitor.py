@@ -61,22 +61,24 @@ class BinanceDexMonitor:
             print(f"❌ Error obteniendo tickers: {e}")
             return {}
     
-    def get_top_volume_pairs(self, limit: int = 30) -> List[str]:
-        """Obtiene los pares con mayor volumen"""
+    def get_top_volume_pairs(self, limit: int = 300) -> List[str]:
+        """Obtiene los pares con mayor volumen - ALTCOINS incluidos"""
         tickers = self.get_all_tickers()
         
-        # Filtrar solo los pares que nos interesan y tienen buen volumen
+        # Filtrar altcoins con volumen
         valid_pairs = []
         for symbol, data in tickers.items():
-            if symbol.endswith('USDT'):
+            if symbol.endswith('USDT') and not symbol.startswith('USD'):
                 try:
                     volume = float(data['volume'])
                     price = float(data['lastPrice'])
                     quote_volume = volume * price
                     
-                    # Mínimo $10M de volumen diario
-                    if quote_volume > 10_000_000:
-                        valid_pairs.append((symbol, quote_volume))
+                    # Mínimo $500K de volumen (incluye altcoins pequeños)
+                    if quote_volume > 500_000:
+                        # Excluir stablecoins
+                        if symbol not in ['USDTUSDT', 'BUSDUSDT', 'USDCUSDT', 'DAIUSDT', 'TUSDUSDT', 'FDUSDUSDT']:
+                            valid_pairs.append((symbol, quote_volume))
                 except:
                     continue
         
