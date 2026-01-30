@@ -1,0 +1,19 @@
+{
+  "cash": 40.96,
+  "positions": {
+    "PAXGUSDT": 0.004127200313667224,
+    "ZECUSDT": 0.04817245739748299,
+    "DASHUSDT": 0.24985360140542653,
+    "RENDERUSDT": 6.069946650859515
+  },
+  "total_trades": 4,
+  "winning_trades": 0,
+  "losing_trades": 0,
+  "entry_prices": {
+    "PAXGUSDT": 4845.9,
+    "ZECUSDT": 332.14,
+    "DASHUSDT": 51.23,
+    "RENDERUSDT": 1.687
+  },
+  "last_update": "2026-01-30T15:45:40.785058"
+}
